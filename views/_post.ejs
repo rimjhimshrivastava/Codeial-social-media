@@ -1,0 +1,29 @@
+<dt id="post-head-<%= post._id %>">
+    <b>Post uploaded by <%= post.user.name %> on <%= post.createdAt.getDate() %>-<%= post.createdAt.getMonth()+1 %>-<%=post.createdAt.getFullYear() %></b>
+    <% if (locals.user && locals.user.id==post.user.id){ %>
+        <a class = "delete-post-button" href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
+    <% } %>
+</dt>
+<dd id="post-<%= post._id %>">
+    <p>
+        <%= post.content %>
+    </p>
+    <div class="post-comments-list">
+        <ul id="post-comments-<%= post._id %>">
+            <% for (comment of post.comments){ %>
+
+                <%- include('_comment', {post: post, comment: comment}) %>
+
+            <% } %>
+        </ul>
+    </div>
+    <div class="post-comments">
+        <% if (locals.user){ %>
+            <form action="/comments/create" method="POST">
+                <textarea type="text" name="content" cols="20" rows="1" placeholder="Comment on the post!"></textarea>
+                <input type="hidden" name="post" value="<%= post._id %>">
+                <input type="submit" value="Add comment">
+            </form>
+        <% } %>
+    </div>
+</dd>
