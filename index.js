@@ -33,6 +33,8 @@ app.use(cookieParser());
 app.use(expressLayouts);
 //tell where to look out for startic files
 app.use(express.static('./assets'));
+//route for uploads path
+app.use('/uploads', express.static(__dirname+'/uploads'));
 //extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
