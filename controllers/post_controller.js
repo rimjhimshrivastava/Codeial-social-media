@@ -1,6 +1,6 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
-
+const Like = require('../models/like');
 module.exports.create = async function (req, res) {
     try {
         let post = await Post.create({
@@ -29,9 +29,13 @@ module.exports.destroy = async function (req, res) {
         // using req.user.id instead of req.user._id because mongoose allows us to convert the id into a string
         if (post.user.toString() == req.user.id) {
             console.log("DELETED POST",post._id);
+            await Like.deleteMany({likeable: post, onModel: 'Post'});
+            for(let comment of post.comments){
+                await Like.deleteMany({likeable: comment, onModel: 'Comment'});
+            }
+
             await Post.deleteOne({_id: post._id});
             await Comment.deleteMany({ post: req.params.id });
-            
             if(req.xhr){
                 return res.status(200).json({
                     data:{

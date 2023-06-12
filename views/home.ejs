@@ -2,24 +2,31 @@
 <h1> Codeial <%= title %>
 </h1>
 
+<!-- container for all elements -->
 <div class="home_container">
+
+    <!-- section for posts -->
     <section id="posts-feed">
         <h4>Home-Feed</h4>
+        <!-- if user is logged in, new post can be created -->
         <% if (locals.user){ %>
             <form id="new-post-form" action="/posts/create" method="POST">
                 <textarea name="content" cols="30" rows="3" placeholder="Enter what's on your mind ;)"></textarea><br>
                 <input type="submit" value="Post"><br>
             </form>
-            <% } %>
-                <div id="display-posts">
-                    <dl>
-                        <% for (let post of post_list){ %>
-                            <%- include('_post', {post: post})%>
-                        <% } %>
-                    </dl>
-                </div>
+        <% } %>
+        <!-- all posts are displayed -->
+            <div id="display-posts">
+                <dl>
+                    <!-- post can be accessed from partial -->
+                    <% for (let post of post_list){ %>
+                        <%- include('_post', {post: post})%>
+                    <% } %>
+                </dl>
+            </div>
     </section>
 
+    <!-- aside section for friends -->
     <section id="user-friends">
         <% if (locals.user) {%>
         <h4>Friends</h4>
@@ -34,3 +41,4 @@
     </section>
 </div>
 <script src="/js/home_posts.js"></script>
+<script src="/js/home_likes.js"></script>

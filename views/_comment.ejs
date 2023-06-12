@@ -1,11 +1,26 @@
+<!-- comment -->
 <li>
     <p>
+        <!-- comment username and content -->
         <b>
             <%= comment.user.name %>
         </b>
         <%= comment.content %>
+        <div>
+        <!-- likes for comment -->
+        <% if (locals.user){ %>
+            <a class="likes" href="likes/toggle/?id=<%= comment.id %>&type=Comment"><%= comment.likes.length %> 
+                <% if(comment.likes.find(obj => obj.user == locals.user.id)){ %>
+                    <i class="fa-solid fa-thumbs-up"></i>
+                <% }else{ %>
+                    <i class="fa-regular fa-thumbs-up"></i>
+                <% } %>
+            </a>
+        <% } %>
+        <!-- delete button for comment -->
         <% if (locals.user && locals.user.id==comment.user.id){ %>
             <a href="/comments/destroy/<%= comment.id %>"><i class="fa-solid fa-trash"></i></a>
         <% } %>
+        </div>
     </p>
 </li>

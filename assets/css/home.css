@@ -10,3 +10,6 @@ a {
   display: flex;
   justify-content: space-between;
   margin: 0 7rem; }
+
+i {
+  color: #ff6eaf; }

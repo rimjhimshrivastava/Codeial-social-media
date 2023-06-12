@@ -22,6 +22,7 @@
     }
 
     //method to create a post in DOM
+    // ERROR NEEDS TO BE FIXED HERE
     let newPostDom = function(post){
         return $(`
         <dt id="post-head-${post._id}">
@@ -32,6 +33,15 @@
             <p>
                 ${post.content}
             </p>
+        <div>
+        <a class="likes" href="likes/toggle/?id=${post._id}&type=Post">${post.likes.length}  
+            <% if(post.likes.find(obj => obj.user == locals.user.id)){ %>
+                <i class="fa-solid fa-thumbs-up"></i>
+            <% }else{ %>
+                <i class="fa-regular fa-thumbs-up"></i>
+            <% } %>
+        </a>
+        </div>
             <div class="post-comments-list">
                 <ul id="post-comments-${post._id}">
                     

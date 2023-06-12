@@ -10,7 +10,12 @@ module.exports.home = async function(req, res){
          populate: {
             path: 'user'
          }
-      }).sort({'createdAt':-1});
+      }).populate('user').populate({
+         path: 'comments',
+         populate: {
+            path: 'likes'
+         }
+      }).populate({path: 'likes'}).sort({'createdAt':-1});
       let user = await User.find({});
       return res.render('home', {
          title: "HOME",
