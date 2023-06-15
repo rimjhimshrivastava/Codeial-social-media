@@ -1,0 +1,61 @@
+#chatbox {
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    background-color: rgb(255, 222, 227);
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    overflow: hidden;
+    .chat_header{
+        border-bottom: 1px solid black;
+        text-align: left;
+        padding: 5px 1rem;
+        background-color: rgb(255, 169, 222);
+        position: relative;
+    }
+    ul{
+        position: relative;
+        padding: 0;
+        li{
+            margin: 15px 10px;
+            span{
+                padding: 5px 1rem;
+                border-radius: 10px;
+                width: fit-content;
+                border-radius: 10px;
+            }  
+        }
+        .friend_text{
+            text-align: left;
+            span{
+                background-color: rgb(255, 237, 237);
+            }
+        }
+        .user_text {
+            text-align: right;
+            span{
+                background-color: rgb(255, 203, 212);
+            }
+        }
+    }
+    form{
+        position: absolute;
+        bottom: 10px;
+        left: 1rem;
+        input{
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 12rem;
+        }
+        button{
+            background-color: rgb(255, 169, 222);
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+    }
+}

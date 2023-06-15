@@ -1,0 +1,49 @@
+#chatbox {
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  background-color: #ffdee3;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+  overflow: hidden; }
+  #chatbox .chat_header {
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding: 5px 1rem;
+    background-color: #ffa9de;
+    position: relative; }
+  #chatbox ul {
+    position: relative;
+    padding: 0; }
+    #chatbox ul li {
+      margin: 15px 10px; }
+      #chatbox ul li span {
+        padding: 5px 1rem;
+        border-radius: 10px;
+        width: fit-content;
+        border-radius: 10px; }
+    #chatbox ul .friend_text {
+      text-align: left; }
+      #chatbox ul .friend_text span {
+        background-color: #ffeded; }
+    #chatbox ul .user_text {
+      text-align: right; }
+      #chatbox ul .user_text span {
+        background-color: #ffcbd4; }
+  #chatbox form {
+    position: absolute;
+    bottom: 10px;
+    left: 1rem; }
+    #chatbox form input {
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: 1px solid black;
+      width: 12rem; }
+    #chatbox form button {
+      background-color: #ffa9de;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 5px 10px; }
