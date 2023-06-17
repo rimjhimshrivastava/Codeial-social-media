@@ -20,29 +20,33 @@
     padding: 0; }
     #chatbox ul li {
       margin: 15px 10px; }
-      #chatbox ul li span {
+      #chatbox ul li .sender_name {
+        font-size: 0.75rem;
+        display: block;
+        margin-bottom: 0.5rem; }
+      #chatbox ul li .text_message {
         padding: 5px 1rem;
         border-radius: 10px;
         width: fit-content;
         border-radius: 10px; }
     #chatbox ul .friend_text {
       text-align: left; }
-      #chatbox ul .friend_text span {
+      #chatbox ul .friend_text .text_message {
         background-color: #ffeded; }
     #chatbox ul .user_text {
       text-align: right; }
-      #chatbox ul .user_text span {
+      #chatbox ul .user_text .text_message {
         background-color: #ffcbd4; }
-  #chatbox form {
+  #chatbox #send-message {
     position: absolute;
     bottom: 10px;
     left: 1rem; }
-    #chatbox form input {
+    #chatbox #send-message input {
       padding: 5px 10px;
       border-radius: 10px;
       border: 1px solid black;
       width: 12rem; }
-    #chatbox form button {
+    #chatbox #send-message button {
       background-color: #ffa9de;
       border: 1px solid black;
       border-radius: 10px;

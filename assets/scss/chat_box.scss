@@ -21,7 +21,12 @@
         padding: 0;
         li{
             margin: 15px 10px;
-            span{
+            .sender_name{
+                font-size: 0.75rem;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            .text_message{
                 padding: 5px 1rem;
                 border-radius: 10px;
                 width: fit-content;
@@ -30,18 +35,18 @@
         }
         .friend_text{
             text-align: left;
-            span{
+            .text_message{
                 background-color: rgb(255, 237, 237);
             }
         }
         .user_text {
             text-align: right;
-            span{
+            .text_message{
                 background-color: rgb(255, 203, 212);
             }
         }
     }
-    form{
+    #send-message{
         position: absolute;
         bottom: 10px;
         left: 1rem;
