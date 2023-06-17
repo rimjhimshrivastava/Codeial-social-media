@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/profile.css">
+<section id="profile">
 <h1>Codeial <%= title %></h1>
 <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
     <% if(user.id == profile_user.id){ %>
@@ -14,3 +16,4 @@
             Name: <%= profile_user.name %><br>
         </div>
     <% } %> 
+</section>
