@@ -1,8 +1,11 @@
 //firing an express server
 //we can start the server with 'npm start', since we's set the start script at package.json
 const express = require('express');
+const env = require('./config/environment');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const app = express();
+require('./config/view-helpers')(app);
 const port = 8000;
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
@@ -25,15 +28,18 @@ chatServer.listen(5000, function(err){
     if(err){console.log("Error chat server:", err); return}
     console.log("chat server is listening on port: 5000");
 });
+const path = require('path');
 
 
-app.use(sassMiddleware({
-    src:'./assets/scss',
-    dest:'./assets/css',
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+if(env.name == 'development'){
+    app.use(sassMiddleware({
+        src: path.join(__dirname, env.asset_path, '/scss'),
+        dest: path.join(__dirname, env.asset_path, '/css'),
+        debug: true,
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));
+}
 
 
 app.use(express.urlencoded());
@@ -43,9 +49,16 @@ app.use(cookieParser());
 //tell our server to use the layout library before the routes
 app.use(expressLayouts);
 //tell where to look out for startic files
-app.use(express.static('./assets'));
+app.use(express.static(path.join(__dirname, env.asset_path)));
 //route for uploads path
 app.use('/uploads', express.static(__dirname+'/uploads'));
+
+
+//keeping logs of activity of users
+app.use(logger(env.morgan.mode, env.morgan.options))
+
+
+
 //extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -60,7 +73,7 @@ app.set('views', './views');
 app.use(session({
     name: 'codeial',
     //TODO change the secret before deployment in production node
-    secret: 'uwuwuwuwuwuwu',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {

@@ -1,0 +1,1 @@
+var toggleONE=function(){let t=$(this);t.click(function(e){e.preventDefault(),$.ajax({type:"get",url:t.prop("href"),success:function(e){e.data.deleted?t.html(e.data.num+' <i class="fa-regular fa-thumbs-up"></i>'):t.html(e.data.num+' <i class="fa-solid fa-thumbs-up"></i>')},error:function(e){console.log(e.resposeText)}})})};$(".likes").each(toggleONE);

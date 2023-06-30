@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/chat_box.css">
+    <link rel="stylesheet" href="<%= assetPath('css/layout.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/chat_box.css') %>">
 
     <%- style %>
     <title>
@@ -65,7 +65,7 @@
 
     <!-- script for socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.2/socket.io.js" integrity="sha512-jMNwWSmjje4fjYut9MBGKXw5FZA6D67NHAuC9szpjbbjg51KefquNfvn4DalCbGfkcv/jHsHnPo1o47+8u4biA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/js/chat_engine.js"></script>
+    <script src="<%= assetPath('js/chat_engine.js') %>"></script>
     <% if(locals.user){ %>
     <script>
         new ChatEngine('chatbox', '<%= locals.user.email %>', '<%= locals.user.name %>')
