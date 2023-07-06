@@ -3,7 +3,7 @@ module.exports.chatSockets = function (socketServer) {
   const io = require("socket.io")(socketServer, {
     //required to be specifiedd after v3
     cors: {
-      origin: "http://54.79.162.128:8000"
+      origin: "http://54.79.162.128"
     }
   });
 
