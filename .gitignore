@@ -1,3 +1,4 @@
 node_modules/
 google-auth-client-secret.json
 public/
+production_logs/
