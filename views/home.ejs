@@ -1,43 +1,48 @@
-<link rel="stylesheet" href="<%= assetPath('css/home.css') %>">
-<h1> Codeial <%= title %> </h1>
+<link rel="stylesheet" href="<%= assetPath('css/home.css') %>" />
 
 <!-- container for all elements -->
 <div class="home_container">
+  <!-- section for posts -->
+  <section id="posts-feed">
+    <!-- if user is logged in, new post can be created -->
+    <% if (locals.user){ %>
+    <form id="new-post-form" action="/posts/create" method="POST">
+      <!-- <label class="upload-label">Upload a Post</label> -->
+      <textarea
+        name="content"
+        cols="50"
+        rows="4"
+        placeholder="Enter what's on your mind ;)">
+        </textarea><br />
+      <div class="upload-design">
+        <input class="submit-button" type="submit" value="Post" />
+      </div>
+    </form>
+    <% } %>
 
-    <!-- section for posts -->
-    <section id="posts-feed">
-        <h4>Home-Feed</h4>
-        <!-- if user is logged in, new post can be created -->
-        <% if (locals.user){ %>
-            <form id="new-post-form" action="/posts/create" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Enter what's on your mind ;)"></textarea><br>
-                <input type="submit" value="Post"><br>
-            </form>
+    <!-- all posts are displayed -->
+    <div id="display-posts">
+      <ul>
+        <!-- post can be accessed from partial -->
+        <% for (let post of post_list){ %> <%- include('_post', {post: post})%>
         <% } %>
-        <!-- all posts are displayed -->
-            <div id="display-posts">
-                <dl>
-                    <!-- post can be accessed from partial -->
-                    <% for (let post of post_list){ %>
-                        <%- include('_post', {post: post})%>
-                    <% } %>
-                </dl>
-            </div>
-    </section>
+      </ul>
+    </div>
+  </section>
 
-    <!-- aside section for friends -->
-    <section id="user-friends">
-        <% if (locals.user) {%>
-        <h4>Friends</h4>
-        <% for (let u of user_list){ %>
-            <% if(u.name != user.name){ %>
-            <p>
-                <a href="/users/profile/<%= u.id %>">
-                    <%= u.name %>
-                </a>
-            </p>
-            <% } } }%>
-    </section>
+  <!-- aside section for friends -->
+  <section id="user-friends">
+    <% if (locals.user) {%>
+    <h3>Friends</h3>
+    <% for (let u of user_list){ %> <% if(u.name !=user.name){ %>
+    <p class="user-name">
+      <a href="/users/profile/<%= u.id %>">
+        <img src="<%= u.avatar %>" alt=""
+      /></a>
+      <a href="/users/profile/<%= u.id %>"> <%= u.name %> </a>
+    </p>
+    <% } } }%>
+  </section>
 </div>
 <script src="<%= assetPath('js/home_posts.js') %>"></script>
 <script src="<%= assetPath('js/home_likes.js') %>"></script>

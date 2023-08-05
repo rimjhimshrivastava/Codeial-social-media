@@ -1,18 +1,52 @@
-h1 {
-  margin: 0 7rem; }
-
-#display-posts dl dt {
-  margin-top: 2rem; }
-
-a {
-  color: black;
-  text-decoration: none; }
-
 .home_container {
   text-align: left;
   display: flex;
   justify-content: space-between;
-  margin: 0 7rem; }
+  margin: 2rem 0 2rem 7rem; }
 
-i {
-  color: #ff6eaf; }
+#new-post-form textarea {
+  border: 2px solid #ff80f7;
+  resize: none; }
+
+#new-post-form .upload-design {
+  position: relative;
+  margin-top: -5px;
+  width: 24.38rem;
+  height: 2rem;
+  padding: 0;
+  background-color: #ff80f7;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; }
+  #new-post-form .upload-design .submit-button {
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+    border: none;
+    height: 1.75rem;
+    width: 4rem;
+    background-color: white;
+    font-size: 1.1rem;
+    color: #ff3df2;
+    border-radius: 1rem; }
+
+#user-friends {
+  border-left: 1px solid white;
+  box-shadow: 3px -2px 4px #ffccf6 inset;
+  padding-left: 2rem;
+  width: 14rem;
+  color: #93258f; }
+  #user-friends h3 {
+    color: #93258f; }
+
+.user-name {
+  align-items: center;
+  display: flex;
+  width: fit-content; }
+  .user-name img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    border-radius: 1.5rem; }
+  .user-name a {
+    color: #93258f;
+    text-decoration: none; }

@@ -31,6 +31,7 @@ chatServer.listen(5000, function(err){
 });
 const path = require('path');
 
+//necessary for cross origin resource sharing
 app.use(cors());
 
 if(env.name == 'development'){

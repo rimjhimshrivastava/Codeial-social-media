@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 body {
-  margin: 0;
-  padding: 0;
-  background-color: pink; }
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffdbf7;
+  font-family: 'Ubuntu', sans-serif; }

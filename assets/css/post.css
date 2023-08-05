@@ -1,0 +1,70 @@
+#display-posts ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+#display-posts .list-posts {
+  padding: 0;
+  margin: 2rem 0;
+  position: relative; }
+  #display-posts .list-posts i {
+    color: #ff6eaf; }
+  #display-posts .list-posts .post-head {
+    display: flex;
+    flex-direction: row; }
+    #display-posts .list-posts .post-head img {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+      border-radius: 1.5rem; }
+    #display-posts .list-posts .post-head .name {
+      color: #93258f;
+      text-decoration: none;
+      position: relative;
+      top: 0.2rem; }
+    #display-posts .list-posts .post-head .upload-date {
+      font-size: 0.8rem;
+      color: grey;
+      position: absolute;
+      top: 1.7rem;
+      left: 4rem; }
+    #display-posts .list-posts .post-head .delete-post-button {
+      position: relative;
+      top: 0.2rem;
+      left: 1rem; }
+  #display-posts .list-posts .post-container {
+    margin-left: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white; }
+    #display-posts .list-posts .post-container .post-content {
+      margin: 1rem 0; }
+    #display-posts .list-posts .post-container .likes a {
+      color: #ff6eaf;
+      text-decoration: none; }
+  #display-posts .list-posts .comments-container {
+    margin-left: 2rem; }
+    #display-posts .list-posts .comments-container .like-now {
+      color: #ff6eaf;
+      text-decoration: none; }
+    #display-posts .list-posts .comments-container .comments-head {
+      margin-top: 1rem;
+      color: grey;
+      font-size: 0.9rem; }
+    #display-posts .list-posts .comments-container .create-comment form {
+      display: flex;
+      align-items: center;
+      background-color: #ff80f7;
+      width: fit-content;
+      padding-bottom: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-top-right-radius: 1rem; }
+      #display-posts .list-posts .comments-container .create-comment form textarea {
+        border: 2px solid #ff80f7;
+        resize: none; }
+      #display-posts .list-posts .comments-container .create-comment form .button {
+        background-color: white;
+        border: 3px solid #ff80f7;
+        color: #ff4cf3;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem; }

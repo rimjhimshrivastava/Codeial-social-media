@@ -1,0 +1,27 @@
+.post-comments-list ul {
+  margin: 0;
+  padding: 0; }
+
+.post-comments-list li {
+  margin: 1rem 0; }
+  .post-comments-list li .comment-details {
+    display: flex;
+    flex-direction: row;
+    position: relative; }
+    .post-comments-list li .comment-details img {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 1rem;
+      margin-right: 0.7rem; }
+    .post-comments-list li .comment-details .name {
+      color: #93258f;
+      text-decoration: none;
+      position: relative;
+      top: 0.3rem; }
+  .post-comments-list li .comment-content {
+    margin-left: 2.7rem;
+    position: relative;
+    bottom: 0.4rem;
+    margin-bottom: 0.5rem; }
+  .post-comments-list li .comment-likes .delete-comment {
+    margin-left: 2rem; }

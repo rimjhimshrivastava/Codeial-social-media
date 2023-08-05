@@ -1,26 +1,35 @@
+<link rel="stylesheet" href="<%= assetPath('css/comments.css') %>" />
+
 <!-- comment -->
 <li>
-    <p>
-        <!-- comment username and content -->
-        <b>
-            <%= comment.user.name %>
-        </b>
-        <%= comment.content %>
-        <div>
-        <!-- likes for comment -->
-        <% if (locals.user){ %>
-            <a class="likes" href="likes/toggle/?id=<%= comment.id %>&type=Comment"><%= comment.likes.length %> 
-                <% if(comment.likes.find(obj => obj.user == locals.user.id)){ %>
-                    <i class="fa-solid fa-thumbs-up"></i>
-                <% }else{ %>
-                    <i class="fa-regular fa-thumbs-up"></i>
-                <% } %>
-            </a>
-        <% } %>
-        <!-- delete button for comment -->
-        <% if (locals.user && locals.user.id==comment.user.id){ %>
-            <a href="/comments/destroy/<%= comment.id %>"><i class="fa-solid fa-trash"></i></a>
-        <% } %>
-        </div>
-    </p>
+  <!-- comment username and content -->
+  <div class="comment-details">
+    <a href="/users/profile/<%= comment.user.id %>">
+      <img src="<%= comment.user.avatar %>" alt="" />
+    </a>
+    <a class="name" href="/users/profile/<%= comment.user.id %>">
+      <%= comment.user.name %>
+    </a>
+  </div>
+  <div class="comment-content"><%= comment.content %></div>
+
+  <div class="comment-likes">
+    <!-- likes for comment -->
+    <% if (locals.user){ %>
+    <a class="like-now" href="likes/toggle/?id=<%= comment.id %>&type=Comment">
+      <%= comment.likes.length %> 
+      <% if(comment.likes.find(obj=> obj.user == locals.user.id)){ %>
+      <i class="fa-solid fa-thumbs-up"></i> Liked 
+      <% }else{ %>
+      <i class="fa-regular fa-thumbs-up"></i> Like
+      <% } %>
+    </a>
+    <% } %>
+    <!-- delete button for comment -->
+    <% if (locals.user && locals.user.id==comment.user.id){ %>
+    <a class="delete-comment" href="/comments/destroy/<%= comment.id %>"
+      ><i class="fa-solid fa-trash"></i
+    ></a>
+    <% } %>
+  </div>
 </li>

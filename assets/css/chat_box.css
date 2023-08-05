@@ -5,7 +5,7 @@
   position: fixed;
   bottom: 0;
   right: 30px;
-  background-color: #ffdee3;
+  background-color: #ffe9fa;
   border-top-left-radius: 3%;
   border-top-right-radius: 3%;
   overflow: hidden; }
@@ -13,8 +13,9 @@
     border-bottom: 1px solid black;
     text-align: left;
     padding: 5px 1rem;
-    background-color: #ffa9de;
-    position: relative; }
+    background-color: #ff80f7;
+    position: relative;
+    color: white; }
   #chatbox ul {
     position: relative;
     padding: 0; }
@@ -36,7 +37,7 @@
     #chatbox ul .user_text {
       text-align: right; }
       #chatbox ul .user_text .text_message {
-        background-color: #ffcbd4; }
+        background-color: #fccbff; }
   #chatbox #send-message {
     position: absolute;
     bottom: 10px;
@@ -47,7 +48,7 @@
       border: 1px solid black;
       width: 12rem; }
     #chatbox #send-message button {
-      background-color: #ffa9de;
+      background-color: #ff80f7;
       border: 1px solid black;
       border-radius: 10px;
       padding: 5px 10px; }

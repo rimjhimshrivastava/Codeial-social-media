@@ -1,47 +1,72 @@
-<!-- header for the post details -->
-<dt id="post-head-<%= post._id %>">
-    <b>Post uploaded by <%= post.user.name %> on <%= post.createdAt.getDate() %>-<%= post.createdAt.getMonth()+1 %>-<%=post.createdAt.getFullYear() %></b>
-    <% if (locals.user && locals.user.id==post.user.id){ %>
-        <a class = "delete-post-button" href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
-    <% } %>
-</dt>
+<link rel="stylesheet" href="<%= assetPath('css/post.css') %>" />
 
-<!-- post content -->
-<dd id="post-<%= post._id %>">
-    <p>
-        <%= post.content %>
-    </p>
-    <div>
-    <!-- likes for post -->
-    <% if (locals.user){ %>
-    <a class="likes" href="likes/toggle/?id=<%= post.id %>&type=Post"><%= post.likes.length %> 
-        <% if(post.likes.find(obj => obj.user == locals.user.id)){ %>
-            <i class="fa-solid fa-thumbs-up"></i>
-        <% }else{ %>
-            <i class="fa-regular fa-thumbs-up"></i>
+<li class="list-posts" id="post-head-<%= post._id %>" >
+
+    <!-- header for the post -->
+    <div class="post-head">
+        <a href="/users/profile/<%= post.user.id %>">
+          <img src="<%= post.user.avatar %>" alt="">
+        </a>
+        <a class="name" href="/users/profile/<%= post.user.id %>"> <%= post.user.name %> </a>
+        <div class="upload-date">Post uploaded on <%= post.createdAt.getDate() %>-<%= post.createdAt.getMonth()+1 %>-<%=post.createdAt.getFullYear() %></div>
+        <% if (locals.user && locals.user.id==post.user.id){ %>
+            <a class = "delete-post-button" href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
         <% } %>
-    </a>
-    <% } %>
     </div>
-    <!-- comments on post -->
-    <div class="post-comments-list">
-        <ul id="post-comments-<%= post._id %>">
-            <!-- partial to access comments -->
-            <% for (comment of post.comments){ %>
 
-                <%- include('_comment', {post: post, comment: comment}) %>
 
-            <% } %>
-        </ul>
-    </div>
-    <!-- new comment can be created if user is logged in -->
-    <div class="post-comments">
+    <!-- content of the post -->
+    <div id="post-<%= post._id %>" class="post-container">
+        <div class="post-content">
+            <%= post.content %>
+        </div>
+
+        
+        <!-- likes for post -->
+        <div class="likes">
         <% if (locals.user){ %>
-            <form action="/comments/create" method="POST">
-                <textarea type="text" name="content" cols="20" rows="1" placeholder="Comment on the post!"></textarea>
-                <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add comment">
-            </form>
+        <a class="like-now" href="likes/toggle/?id=<%= post.id %>&type=Post"><%= post.likes.length %> 
+            <% if(post.likes.find(obj => obj.user == locals.user.id)){ %>
+                <i class="fa-solid fa-thumbs-up"></i> Liked
+            <% }else{ %>
+                <i class="fa-regular fa-thumbs-up"></i> Like
+            <% } %>
+            
+        </a>
         <% } %>
+        </div>
     </div>
-</dd>
+
+
+    <!-- comments on post -->
+    <div class="comments-container">
+        <div class="comments-head">Comments section</div>
+
+        <!-- list of comments -->
+        <div class="post-comments-list">
+            <ul id="post-comments-<%= post._id %>">
+                <!-- partial to access comments -->
+                <% for (comment of post.comments){ %>
+    
+                    <%- include('_comment', {post: post, comment: comment}) %>
+    
+                <% } %>
+            </ul>
+        </div>
+
+        <!-- new comment can be created if user is logged in -->
+        <div class="create-comment">
+            <% if (locals.user){ %>
+                <form action="/comments/create" method="POST">
+                    <textarea type="text" name="content" cols="30" rows="1" placeholder="Comment on the post!"></textarea>
+                    <input type="hidden" name="post" value="<%= post._id %>">
+                    <input class="button" type="submit" value="Add comment">
+                </form>
+            <% } %>
+        </div>
+    </div>
+</li>
+
+
+
+

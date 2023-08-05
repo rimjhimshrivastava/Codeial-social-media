@@ -1,9 +1,24 @@
-header, footer {
-  text-align: center; }
-
-li, li a {
-  text-decoration: none;
-  color: black; }
-
-ul {
-  list-style-type: none; }
+header {
+  background-color: #ff5df4;
+  padding-left: 7rem; }
+  header ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 1rem 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end; }
+    header ul .title-name {
+      position: absolute;
+      left: 7rem;
+      font-weight: 600;
+      font-size: 2rem;
+      color: white;
+      display: inline; }
+    header ul .tabs {
+      font-size: 1.25rem;
+      margin: 0 2rem; }
+      header ul .tabs a {
+        text-decoration: none;
+        color: #e1e1e1; }

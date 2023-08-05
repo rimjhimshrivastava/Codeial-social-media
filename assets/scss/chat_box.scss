@@ -5,7 +5,7 @@
     position: fixed;
     bottom: 0;
     right: 30px;
-    background-color: rgb(255, 222, 227);
+    background-color: rgb(255, 233, 250);
     border-top-left-radius: 3%;
     border-top-right-radius: 3%;
     overflow: hidden;
@@ -13,8 +13,9 @@
         border-bottom: 1px solid black;
         text-align: left;
         padding: 5px 1rem;
-        background-color: rgb(255, 169, 222);
+        background-color: rgb(255, 128, 247);
         position: relative;
+        color: white;
     }
     ul{
         position: relative;
@@ -42,7 +43,7 @@
         .user_text {
             text-align: right;
             .text_message{
-                background-color: rgb(255, 203, 212);
+                background-color: rgb(252, 203, 255);
             }
         }
     }
@@ -57,7 +58,7 @@
             width: 12rem;
         }
         button{
-            background-color: rgb(255, 169, 222);
+            background-color: rgb(255, 128, 247);
             border: 1px solid black;
             border-radius: 10px;
             padding: 5px 10px;

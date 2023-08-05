@@ -10,10 +10,10 @@
                 url: likeable.prop('href'),
                 success: function (res) {
                     if (res.data.deleted) {
-                        likeable.html(`${res.data.num} <i class="fa-regular fa-thumbs-up"></i>`);
+                        likeable.html(`${res.data.num} <i class="fa-regular fa-thumbs-up"></i> Like`);
                     }
                     else {
-                        likeable.html(`${res.data.num} <i class="fa-solid fa-thumbs-up"></i>`);
+                        likeable.html(`${res.data.num} <i class="fa-solid fa-thumbs-up"></i> Liked`);
                     }
                 },
                 error: function (err) {
@@ -23,5 +23,5 @@
         })
     }
     // execute function toggleONE on every object with class likes
-    $('.likes').each(toggleONE)
+    $('.like-now').each(toggleONE)
 }
