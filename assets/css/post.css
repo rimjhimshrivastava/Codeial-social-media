@@ -50,21 +50,23 @@
       margin-top: 1rem;
       color: grey;
       font-size: 0.9rem; }
-    #display-posts .list-posts .comments-container .create-comment form {
-      display: flex;
-      align-items: center;
-      background-color: #ff80f7;
-      width: fit-content;
-      padding-bottom: 1rem;
-      border-bottom-left-radius: 1rem;
-      border-bottom-right-radius: 1rem;
-      border-top-right-radius: 1rem; }
-      #display-posts .list-posts .comments-container .create-comment form textarea {
-        border: 2px solid #ff80f7;
-        resize: none; }
-      #display-posts .list-posts .comments-container .create-comment form .button {
-        background-color: white;
-        border: 3px solid #ff80f7;
-        color: #ff4cf3;
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem; }
+    #display-posts .list-posts .comments-container .create-comment {
+      margin-top: 1rem; }
+      #display-posts .list-posts .comments-container .create-comment form {
+        display: flex;
+        align-items: center;
+        background-color: #ff80f7;
+        width: fit-content;
+        padding-bottom: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem; }
+        #display-posts .list-posts .comments-container .create-comment form textarea {
+          border: 2px solid #ff80f7;
+          resize: none; }
+        #display-posts .list-posts .comments-container .create-comment form .button {
+          background-color: white;
+          border: 3px solid #ff80f7;
+          color: #ff4cf3;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem; }

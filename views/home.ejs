@@ -9,11 +9,11 @@
     <form id="new-post-form" action="/posts/create" method="POST">
       <!-- <label class="upload-label">Upload a Post</label> -->
       <textarea
+        id="new-post-textarea"
         name="content"
         cols="50"
         rows="4"
-        placeholder="Enter what's on your mind ;)">
-        </textarea><br />
+        placeholder="Enter what's on your mind ;)"></textarea><br />
       <div class="upload-design">
         <input class="submit-button" type="submit" value="Post" />
       </div>
@@ -44,5 +44,5 @@
     <% } } }%>
   </section>
 </div>
-<script src="<%= assetPath('js/home_posts.js') %>"></script>
 <script src="<%= assetPath('js/home_likes.js') %>"></script>
+<script src="<%= assetPath('js/home_posts.js') %>"></script>
