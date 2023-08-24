@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="<%= assetPath('css/sign-in.css') %>" >
 <section id="sign-in">
-<h3>SIGN IN</h3>
-<form action="/users/create-session" method="POST">
-    <label>EMAIL:</label>
-    <input type="text" required placeholder="Enter Email" name="email"><br>
-    <label>PASSWORD:</label>
-    <input type="password" required placeholder="Enter password" name="password"><br>
-    <input type="submit" value="SIGN IN"><br>
+    <form action="/users/create-session" method="POST">
+    <h2>SIGN IN</h2>
+    <label>Email</label>
+    <input type="text" required placeholder="Enter Email" name="email">
+    <label>Password</label>
+    <input type="password" required placeholder="Enter password" name="password">
+    <button type="submit">Sign In</button>
+    <p>
+        <a class="google-signin" href="/users/auth/google"><i class="fa-brands fa-google" style="color: red"></i> Google Sign In</a>
+    </p>
 </form>
-<p>
-    <a href="/users/auth/google">Google Sign In</a>
-</p>
 </section>

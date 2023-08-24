@@ -8,7 +8,7 @@
   margin: 2rem 0;
   position: relative; }
   #display-posts .list-posts i {
-    color: #ff6eaf; }
+    color: var(--color-icon); }
   #display-posts .list-posts .post-head {
     display: flex;
     flex-direction: row; }
@@ -18,7 +18,7 @@
       margin-right: 1rem;
       border-radius: 1.5rem; }
     #display-posts .list-posts .post-head .name {
-      color: #93258f;
+      color: var(--color-dark-text);
       text-decoration: none;
       position: relative;
       top: 0.2rem; }
@@ -39,12 +39,12 @@
     #display-posts .list-posts .post-container .post-content {
       margin: 1rem 0; }
     #display-posts .list-posts .post-container .likes a {
-      color: #ff6eaf;
+      color: var(--color-icon);
       text-decoration: none; }
   #display-posts .list-posts .comments-container {
     margin-left: 2rem; }
     #display-posts .list-posts .comments-container .like-now {
-      color: #ff6eaf;
+      color: var(--color-icon);
       text-decoration: none; }
     #display-posts .list-posts .comments-container .comments-head {
       margin-top: 1rem;
@@ -55,18 +55,18 @@
       #display-posts .list-posts .comments-container .create-comment form {
         display: flex;
         align-items: center;
-        background-color: #ff80f7;
+        background-color: var(--color-input-area);
         width: fit-content;
         padding-bottom: 1rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         border-top-right-radius: 1rem; }
         #display-posts .list-posts .comments-container .create-comment form textarea {
-          border: 2px solid #ff80f7;
+          border: 2px solid var(--color-input-area);
           resize: none; }
         #display-posts .list-posts .comments-container .create-comment form .button {
           background-color: white;
-          border: 3px solid #ff80f7;
-          color: #ff4cf3;
+          border: 3px solid var(--color-input-area);
+          color: var(--color-light-text);
           border-top-right-radius: 1rem;
           border-bottom-right-radius: 1rem; }

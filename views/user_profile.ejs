@@ -1,19 +1,29 @@
 <link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
+
+
 <section id="profile">
-<h1>Codeial <%= title %></h1>
-<img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
-    <% if(user.id == profile_user.id){ %>
-        <form action="/users/update/<%= profile_user.id%>" enctype="multipart/form-data" method="post">
-            <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>"><br>
-            <input type="text" name="email" placeholder="Your email" value="<%= profile_user.email %>"><br>
-            Change Profile Image:<br><input type="file" name="avatar" placeholder="Profile Picture"><br>
-            <input type="submit" value="apply changes"><br>
-        </form>
-    <% }else{ %>
-        <div>
-            <b>User Details:</b><br>
-            Email: <%= profile_user.email %><br>
-            Name: <%= profile_user.name %><br>
-        </div>
-    <% } %> 
+    <div class="left-side">
+        <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100">
+        <h1><%= profile_user.name %></h1>
+    </div>
+    <div>
+        <% if(user.id == profile_user.id){ %>
+            <form class="right-content" action="/users/update/<%= profile_user.id%>" enctype="multipart/form-data" method="post">
+                <label>Profile Name</label>
+                <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>">
+                <label>User Email</label>
+                <input type="text" name="email" placeholder="Your email" value="<%= profile_user.email %>">
+                Change Profile Image:<br><input type="file" name="avatar" placeholder="Profile Picture">
+                <button type="submit">Apply Changes</button>
+            </form>
+        <% }else{ %>
+            <div class="right-content">
+                <h2 style="color: var(--color-dark-text)">User Details</h2>
+                <div>User Email</div>
+                <div><%= profile_user.email %></div>
+                <div>Username</div>
+                <div><%= profile_user.name %></div>
+            </div>
+        <% } %> 
+    </div>
 </section>

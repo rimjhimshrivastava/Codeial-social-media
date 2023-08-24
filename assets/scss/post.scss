@@ -10,7 +10,7 @@
     margin: 2rem 0;
     position: relative;
     i {
-      color: rgb(255, 110, 175);
+      color: var(--color-icon);
     }
     .post-head {
       display: flex;
@@ -22,7 +22,7 @@
         border-radius: 1.5rem;
       }
       .name {
-        color: rgb(147, 37, 143);
+        color: var(--color-dark-text);
         text-decoration: none;
         position: relative;
         top: 0.2rem;
@@ -50,7 +50,7 @@
         }
         .likes{
             a{
-                color: rgb(255, 110, 175);
+                color: var(--color-icon);
                 text-decoration: none;
             }
         }
@@ -58,7 +58,7 @@
     .comments-container{
         margin-left: 2rem;
         .like-now{
-            color: rgb(255, 110, 175);
+            color: var(--color-icon);
             text-decoration: none;
         }
         .comments-head{
@@ -71,20 +71,20 @@
             form{
                 display: flex;
                 align-items: center;
-                background-color: rgb(255, 128, 247);
+                background-color: var(--color-input-area);
                 width: fit-content;
                 padding-bottom: 1rem;
                 border-bottom-left-radius: 1rem;
                 border-bottom-right-radius: 1rem;
                 border-top-right-radius: 1rem;
                 textarea{
-                    border: 2px solid rgb(255, 128, 247);
+                    border: 2px solid var(--color-input-area);
                     resize: none;
                 }
                 .button{
                     background-color: white;
-                    border: 3px solid rgb(255, 128, 247);
-                    color: rgb(255, 76, 243);
+                    border: 3px solid var(--color-input-area);
+                    color: var(--color-light-text);
                     border-top-right-radius: 1rem;
                     border-bottom-right-radius: 1rem;
                 }

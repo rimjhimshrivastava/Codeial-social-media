@@ -1,5 +1,5 @@
 header {
-  background-color: #ff5df4;
+  background-color: var(--color-header);
   padding-left: 7rem; }
   header ul {
     display: flex;
@@ -15,10 +15,23 @@ header {
       font-weight: 600;
       font-size: 2rem;
       color: white;
-      display: inline; }
+      display: inline;
+      text-decoration: none; }
     header ul .tabs {
       font-size: 1.25rem;
       margin: 0 2rem; }
       header ul .tabs a {
         text-decoration: none;
-        color: #e1e1e1; }
+        color: var(--color-grey-text); }
+  header .user-name {
+    align-items: center;
+    display: flex;
+    width: fit-content; }
+    header .user-name img {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+      border-radius: 1.5rem; }
+    header .user-name a {
+      color: var(--color-dark-text);
+      text-decoration: none; }

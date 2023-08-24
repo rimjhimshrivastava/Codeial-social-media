@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+:root {
+  --color-background: rgb(248, 219, 255);
+  --color-header: rgb(226, 105, 250);
+  --color-header-light: rgb(239, 158, 255);
+  --color-lighter-background: rgb(251, 235, 255);
+  --color-dark-text: rgb(147, 37, 143);
+  --color-light-text: rgb(215, 70, 210);
+  --color-grey-text: rgb(225, 225, 225);
+  --color-input-area: rgb(230, 128, 255);
+  --color-icon: rgb(255, 110, 238); }
+
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #ffdbf7;
+  background-color: var(--color-background);
   font-family: 'Ubuntu', sans-serif; }

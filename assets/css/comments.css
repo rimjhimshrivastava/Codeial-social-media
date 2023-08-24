@@ -14,7 +14,7 @@
       border-radius: 1rem;
       margin-right: 0.7rem; }
     .post-comments-list li .comment-details .name {
-      color: #93258f;
+      color: var(--color-dark-text);
       text-decoration: none;
       position: relative;
       top: 0.3rem; }

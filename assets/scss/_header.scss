@@ -1,5 +1,5 @@
 header{
-    background-color: rgb(255, 93, 244);
+    background-color: var(--color-header);
     padding-left: 7rem;
     ul{
         display: flex;
@@ -16,14 +16,30 @@ header{
             font-size: 2rem;
             color: white;
             display: inline;
+            text-decoration: none;
         }
         .tabs {
             font-size: 1.25rem;
             margin: 0 2rem;
             a{
                 text-decoration: none;
-                color: rgb(225, 225, 225)
+                color: var(--color-grey-text);
             }
+        }
+    }
+    .user-name {
+        align-items: center;
+        display: flex;
+        width: fit-content;
+        img {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 1rem;
+          border-radius: 1.5rem;
+        }
+        a{
+          color: var(--color-dark-text);
+          text-decoration: none;
         }
     }
 }

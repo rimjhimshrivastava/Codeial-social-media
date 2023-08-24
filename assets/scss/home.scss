@@ -6,7 +6,7 @@
 }
 #new-post-form {
   textarea {
-    border: 2px solid rgb(255, 128, 247);
+    border: 2px solid var(--color-input-area);
     resize: none;
   }
   .upload-design {
@@ -15,7 +15,7 @@
     width: 24.38rem;
     height: 2rem;
     padding: 0;
-    background-color: rgb(255, 128, 247);
+    background-color: var(--color-input-area);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     .submit-button {
@@ -27,7 +27,7 @@
       width: 4rem;
       background-color: white;
       font-size: 1.1rem;
-      color: rgb(255, 61, 242);
+      color:var(--color-light-text);
       border-radius: 1rem;
     }
   }
@@ -36,12 +36,12 @@
 //aside section
 #user-friends {
   border-left: 1px solid white;
-  box-shadow: 3px -2px 4px rgb(255, 204, 246) inset;
+  box-shadow: 3px -2px 4px rgb(243, 204, 255) inset;
   padding-left: 2rem;
   width: 14rem;
-  color: rgb(147, 37, 143);
+  color: var(--color-dark-text);
   h3 {
-    color: rgb(147, 37, 143);
+    color:var(--color-dark-text);
   }
 }
 .user-name {
@@ -55,7 +55,7 @@
       border-radius: 1.5rem;
     }
     a{
-      color: rgb(147, 37, 143);
+      color: var(--color-dark-text);
       text-decoration: none;
     }
 }

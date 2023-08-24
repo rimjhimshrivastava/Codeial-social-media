@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<%= assetPath('css/sign-in.css') %>" >
 <section id="sign-in">
-<h3>SIGN UP</h3>
-<form action="/users/create" method="POST">
+    <form action="/users/create" method="POST">
+    <h2>SIGN UP</h2>
     <label>EMAIL:</label>
     <input type="text" required placeholder="Enter Email" name="email"><br>
     <label>PASSWORD:</label>
@@ -10,9 +10,10 @@
     <input type="password" required placeholder="Confirm password" name="confirm_password"><br>
     <label>NAME:</label>
     <input type="text" required placeholder="Enter your Name" name="name"><br>
-    <input type="submit" value="SIGN UP"><br>
+    <button type="submit">Sign Up</button>
+    <p>
+        <a class="google-signin" href="/users/auth/google"><i class="fa-brands fa-google" style="color: red"></i> Google Sign Up</a>
+    </p>
 </form>
-<p>
-    <a href="/users/auth/google">Google Sign In</a>
-</p>
+
 </section>
