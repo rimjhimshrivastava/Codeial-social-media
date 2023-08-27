@@ -8,6 +8,8 @@ import rev from 'gulp-rev';
 import uglify from 'gulp-uglify';
 import imagemin from 'gulp-imagemin';
 import {deleteSync} from 'del';
+import rename from 'gulp-rename';
+import revCollector from 'gulp-rev-collector';
 
 gulp.task('css', function(done){
     console.log('minifying css ...');
@@ -33,6 +35,7 @@ gulp.task('js', function(done){
     console.log('minifying js ...');
     gulp.src('./assets/**/*.js')
     .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
     .pipe(rev.manifest({
@@ -45,7 +48,7 @@ gulp.task('js', function(done){
 
 gulp.task('images', function(done){
     console.log('compressing images ...');
-    gulp.src('./assets/**/*.+(png|jpg|gif|svg|jpeg)')
+    gulp.src('./assets/**/*')
     .pipe(imagemin())
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
@@ -63,7 +66,13 @@ gulp.task('clean:assets', function(done){
     done();
 });
 
-gulp.task('build', gulp.series('clean:assets', 'css', 'js', 'images'), function(done){
+gulp.task('rev-collector', function () {
+    return gulp.src(['./public/assets/**/*.json', './public/assets/**/*.html', './public/assets/**/*.css'])  // Add relevant files
+        .pipe(revCollector())  // Replace references with versioned filenames
+        .pipe(gulp.dest('dist'));  // Output to the same or appropriate directory
+});
+
+gulp.task('build', gulp.series('clean:assets', 'css', 'js', 'images', 'rev-collector'), function(done){
     console.log('Building assets ...');
     done();
 });
