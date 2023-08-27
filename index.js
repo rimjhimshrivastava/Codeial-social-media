@@ -54,7 +54,7 @@ app.use(expressLayouts);
 //tell where to look out for startic files
 app.use(express.static(path.join(__dirname, env.asset_path)));
 //route for uploads path
-app.use('/uploads', express.static(__dirname+'/uploads'));
+app.use('/uploads', express.static(__dirname +'/uploads'));
 
 
 //keeping logs of activity of users

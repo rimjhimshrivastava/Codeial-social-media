@@ -39,17 +39,21 @@ module.exports.signin = function (req, res) {
 module.exports.create = async function (req, res) {
     try {
         if (req.body.password != req.body.confirm_password) {
+            req.flash('error', 'confirm password does not match')
             return res.redirect('back');
         }
         let user = await User.findOne({ email: req.body.email });
         if (!user) {
             let user = await User.create(req.body);
+            req.flash('success', 'User created successfully.')
             return res.redirect('/users/sign-in');
         }
         else {
+            req.flash('error', 'Failed to create user.')
             return res.redirect('back');
         }
     } catch (err) {
+        req.flash('error', 'Failed to create user.')
         console.log('error in creating user in signing up');
         return;
     }
@@ -108,17 +112,21 @@ module.exports.update = async function(req, res){
                 user.email = req.body.email;
                 if(req.file){
                     if(user.avatar){
-                        fs.unlinkSync(path.join(__dirname,'..', user.avatar));
+                        // fs.unlinkSync(path.join(__dirname,'..', user.avatar));
+                        fs.rm(path.join(__dirname,'..', user.avatar));
                     }
                     user.avatar = User.avatarPath + '/' + req.file.filename;
                 }
                 user.save();
             })
+            req.flash('success', 'Profile updated successfully.')
             return res.redirect('back');
         }else{
+            req.flash('error', 'Failed to update profile.')
             return req.status(401).send('Unauthorized');
         }
     }catch(err){
+        req.flash('error', 'Failed to update profile.')
         console.log('Error in updating user profile')
     }
 }
